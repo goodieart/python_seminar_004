@@ -4,8 +4,8 @@
 from random import randint
 
 
-def get_polinom(k: int) -> list:
-    li = [randint(0, 100) for _ in range(k)]
+def get_polynomial(k: int) -> list:
+    li = [randint(0, 100) for _ in range(k + 1)]
     li = list(filter(lambda i: i != 0, li))
     li.sort()
     li = list(map(str, li))
@@ -17,4 +17,9 @@ def get_polinom(k: int) -> list:
     return res_str
 
 
-print(get_polinom(8))
+def save_data(data: str):
+    with open('data.txt', 'w') as f:
+        f.write(data)
+
+
+save_data(get_polynomial(8))
