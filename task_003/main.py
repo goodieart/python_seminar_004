@@ -3,5 +3,5 @@
 
 user_input = list(
     map(int, input('Введите последовательность чисел через пробел: ').split()))
-s = set(user_input)
-print(f'Уникальные элементы списка: {s}')
+uniq = [i for i in user_input if user_input.count(i) == 1]
+print(f'Уникальные элементы списка: {uniq}')
